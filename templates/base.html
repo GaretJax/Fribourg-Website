@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <title>{% block title %}{% endblock title %}</title>
+    
+    <link rel="icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
+    {% block stylesheets -%}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/master.css" type="text/css" />
+    
+    <!--[if IE 8]>
+    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie8.css" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie7.css" type="text/css" />
+    <![endif]-->
+    {%- endblock stylesheets %}
+    
+    {% block scripts -%}
+    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/master.js"></script>
+    
+    <!--[if IE 8]>
+    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie8.js"></script>
+    <![endif]-->
+    <!--[if IE 7]>
+    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie7.js"></script>
+    <![endif]-->
+    {%- endblock scripts %}
+    
+    {%- block extrahead %}{% endblock extrahead %}
+</head>
+
+<body id="{% block bodyid %}{% endblock %}">
+    {% block body -%}
+
+    {% block header -%}
+    <header>
+        <h1></h1>
+    </header>
+    {%- endblock %}
+
+    {% block navigation -%}
+    <nav>
+        <ul>
+            <li id=""><a href="#"></a></li>
+        </ul>
+    </nav>
+    {%- endblock navigation %}
+
+    {% block content %}{% endblock content %}
+
+    {% block footer -%}
+    <footer></footer>
+    {%- endblock footer %}
+    {%- endblock %}
+</body>
+</html>
