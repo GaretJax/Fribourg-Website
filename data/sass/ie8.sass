@@ -1,0 +1,60 @@
+@import defines
+
+// Main navigation
+
+body > nav
+    ul
+        li.selected a, li.ancestor a
+            border: 0
+            margin-left: 1px
+            
+        li.selected:first-child a, li.ancestor:first-child a
+            margin-left: 0
+
+// Sidebar
+
+body > section > aside
+    background-color: #d6dfeb
+
+#submenu
+    +solid-separator
+
+    > li
+        > a:hover
+            background: #e2e8f0 url(../images/sidebar-shadow.png)
+    
+    > .ancestor > a, > .selected > a
+        background: #e2e8f1 url(../images/sidebar-shadow.png)
+        
+    ul
+        background: #edf2f7 url(../images/sidebar-shadow.png)
+
+        .selected a
+            color: #4c637a
+            background: #e0e6f0 url(../images/sidebar-shadow.png)
+
+        a
+            color: #77889a
+
+            &:hover
+                color: #4d637b
+                background: #e0e6f0 url(../images/sidebar-shadow.png)
+
+
+#sponsors
+    +solid-separator
+    
+    a:hover
+        background: #e2e8f0 url(../images/sidebar-shadow.png)
+        
+// Footer
+body > footer
+    > div > div
+        border-right: 1px solid #1f3245
+        
+        h1
+            color: #476075
+    
+    > div > div + div + div
+        p
+            color: #3a4a58

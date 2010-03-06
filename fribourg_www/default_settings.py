@@ -5,6 +5,8 @@ import os
 DJANGO_BASE = os.path.dirname(__file__)
 PROJECT_BASE = os.path.dirname(DJANGO_BASE)
 
+gettext = lambda s: s
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -58,6 +60,13 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.load_template_source',
     'django.template.loaders.filesystem.load_template_source',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
 )
 
 MIDDLEWARE_CLASSES = (

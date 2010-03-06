@@ -1,60 +1,130 @@
 <!DOCTYPE html>
-
+{% load cms_tags %}
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    
-    <title>{% block title %}{% endblock title %}</title>
-    
-    <link rel="icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
-    {% block stylesheets -%}
-    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/master.css" type="text/css" />
-    
-    <!--[if IE 8]>
-    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie8.css" type="text/css" />
-    <![endif]-->
-    <!--[if IE 7]>
-    <link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie7.css" type="text/css" />
-    <![endif]-->
-    {%- endblock stylesheets %}
-    
-    {% block scripts -%}
-    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/jquery-1.4.1.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/master.js"></script>
-    
-    <!--[if IE 8]>
-    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie8.js"></script>
-    <![endif]-->
-    <!--[if IE 7]>
-    <script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie7.js"></script>
-    <![endif]-->
-    {%- endblock scripts %}
-    
-    {%- block extrahead %}{% endblock extrahead %}
+	<meta charset="utf-8" />
+	
+	<title>{% block title %}Fribourg Natation{% endblock title %}</title>
+	
+	<link rel="icon" type="image/png" href="{{ MEDIA_URL }}images/favicon.png" />
+	{% block stylesheets %}
+	<link rel="stylesheet" href="{{ MEDIA_URL }}styles/master.css" type="text/css" />
+	
+	<!--[if IE 8]>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie8.css" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}styles/ie7.css" type="text/css" />
+	<![endif]-->
+	{% endblock stylesheets %}
+	
+	{% block scripts %}
+	<script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/master.js"></script>
+	
+	<!--[if IE 8]>
+	<script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie8.js"></script>
+	<![endif]-->
+	<!--[if IE 7]>
+	<script type="text/javascript" charset="utf-8" src="{{ MEDIA_URL }}scripts/ie7.js"></script>
+	<![endif]-->
+	{% endblock scripts %}
+	
+	{% block extrahead %}{% endblock extrahead %}
 </head>
 
-<body id="{% block bodyid %}{% endblock %}">
-    {% block body -%}
+<body id="{% block bodyid %}{% page_attribute ciao %}{% endblock bodyid %}">
+	{% block body %}
 
-    {% block header -%}
-    <header>
-        <h1></h1>
-    </header>
-    {%- endblock %}
+	{% block header %}
+	<header>
+		<h1><a href="{% page_id_url "index" %}">Fribourg Natation</a></h1>
+		
+		<form id="search-form">
+			<p>
+				<input type="search" name="search_string" placeholder="Recherche..." />
+				<input type="submit" value="Go" />
+			</p>
+			
+			<p><a href="#">Recherche avancée &rarr;</a></p>
+		</form>
+	</header>
+	{% endblock header %}
 
-    {% block navigation -%}
-    <nav>
-        <ul>
-            <li id=""><a href="#"></a></li>
-        </ul>
-    </nav>
-    {%- endblock navigation %}
+	{% block navigation %}
+	<nav>
+		<ul>
+			{% show_menu 0 0 %}
+		</ul>
+	</nav>
+	{% endblock navigation %}
 
-    {% block content %}{% endblock content %}
+	{% block content %}
+	<section>
+		{% block sidebar %}
+		<aside>
+			<h1>{% show_breadcrumb 0 "cms/top_ancestor.html" %}</h1>
+			{% block subnavigation %}
+			<nav>
+				<ul id="submenu">
+					{% show_menu 1 2 0 1 %}
+				</ul>
+			</nav>
+			{% endblock subnavigation %}
+			
+			<h1>Notre sponsors</h1>
+			<ul id="sponsors">
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/ubs.png" /></a></li>
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/groupe-e.png" /></a></li>
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/arena.png" /></a></li>
+			</ul>
+		</aside>
+		{% endblock sidebar %}
+		{% block main %}
+		<section></section>
+		{% endblock main %}
+	</section>
+	{% endblock content %}
 
-    {% block footer -%}
-    <footer></footer>
-    {%- endblock footer %}
-    {%- endblock %}
+	{% block footer %}
+	<footer>
+		<div>
+			<div>
+				<h1>Sections</h1>
+				<ul>
+					<li><a href="#">Natation</a></li>
+					<li><a href="#">Plongeon</a></li>
+					<li><a href="#">Waterpolo</a></li>
+					<li><a href="#">Sauvetage</a></li>
+					<li><a href="#">Plongee</a></li>
+					<li><a href="#">Triathlon</a></li>
+				</ul>
+			</div>
+		
+			<div>
+				<h1>Autres pages</h1>
+				<ul>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Présentation</a></li>
+					<li><a href="#">Marketing</a></li>
+					<li><a href="#">Contacts</a></li>
+					<li><a href="#">Sponsors</a></li>
+					<li><a href="#">Liens</a></li>
+				</ul>
+			</div>
+		
+			<div>
+				<img src="{{ MEDIA_URL }}images/logo.png" />
+				
+				<address>Fribourg Natation<br />
+					Case postale 531<br />
+					1701 Fribourg</address>
+				
+				<p>Copyright © 2009-2010 Fribourg Natation, tous les droits réservé.</p>
+			</div>
+		</div>
+	</footer>
+	{% endblock footer %}
+	{% endblock body %}
 </body>
 </html>

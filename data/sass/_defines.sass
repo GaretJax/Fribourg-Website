@@ -1,0 +1,55 @@
+!content_width = 870px
+!sidebar_width = 230px
+!body_width = !content_width + !sidebar_width
+
+=content-wrapper
+    width = !body_width
+    +box-sizing("border-box")
+    margin: 0 auto
+    
+=content
+    +float-right
+    +box-sizing("border-box")
+    width = !content_width
+    
+=sidebar
+    +float-left
+    +box-sizing("border-box")
+    width = !sidebar_width
+    
+=separator
+    border-bottom: 1px solid #f4f5f8
+    border-top: 1px solid #a9bed6
+    
+    > li
+        border-top: 1px solid rgba(244, 245, 248, 0.8)
+        border-bottom: 1px solid rgba(150, 169, 190, 0.6)
+    
+    li ul
+        border-top: 1px solid rgba(150, 169, 190, 0.6)
+    
+    li li
+        //border-bottom: 1px solid rgba(198, 213, 231, 0.6)
+    
+    li li:first-child
+        border-top: 1px solid rgba(244, 245, 248, 0.6)
+    
+    li li:last-child
+        border-bottom: 0
+        
+=solid-separator
+    border-bottom: 1px solid #f4f5f8
+    border-top: 1px solid #a9bed6
+
+    > li
+        border-top: 1px solid #e9edf3
+        border-bottom: 1px solid #acbccf
+
+    li ul
+        border-top: 1px solid #b7c5d5
+
+    li li:first-child
+        border-top: 1px solid #eff3f7
+
+    li li:last-child
+        border-bottom: 0

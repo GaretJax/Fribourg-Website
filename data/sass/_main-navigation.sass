@@ -1,0 +1,62 @@
+body > nav
+    +content-wrapper
+    padding-top: 5px
+    margin-top: -10px
+    
+    ul
+        +content
+        +float-right
+        +border-top-radius(10px)
+        +pie-clearfix
+        
+        background-color: #172a3e
+    
+        li
+            padding: 3px 0
+            display: block
+            float: left
+            
+            &.selected, &.ancestor
+                background: #fff
+                margin-top: -3px
+                padding-top: 4px
+                padding-bottom: 4px
+                border: 1px solid #fff
+                border-bottom: 0
+                
+                a, a:hover
+                    color: #4a5c6e
+                    padding: 0 14px
+                
+                // Cancel borders on both side, except on the first item
+                &:not(:first-child) a,
+                + li a
+                    margin-left: 1px
+                    border: 0
+            
+            /*&.ancestor
+                background: rgba(255, 255, 255, 0.8)
+                border-color: rgba(255, 255, 255, 0)*/
+            
+            &.selected a
+                cursor: default
+                
+                &:hover
+                    text-decoration: none
+            
+            a
+                font-size: 1.1em
+                color: #a4b7cb
+                display: block
+                line-height: 24px
+                text-decoration: none
+                padding: 0 15px
+                
+                &:hover
+                    text-decoration: underline
+                    
+            ul
+                display: none
+    
+        li + li a
+            border-left: 1px solid #344556

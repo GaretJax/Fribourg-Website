@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+
+{% block bodyid %}homepage{% endblock bodyid %}
+
+{% block main %}
+		<section>
+			{% placeholder "introduction" %}
+			
+			<ul class="latest-news">
+				<li>
+					<article>
+						<header>
+							<h1>Fribourg une defaite encourageante</h1>
+							<time></time>
+						</header>
+						
+						<p>Pour son premier match Fribourg se déplaçait à Nyon. Fribourg commençait idéalement le match en menant 2-0 après un penalty, puis un contre suite à une récupération en milieu de terrain. L’équipe de Nyon impose ensuite le rythme et mène 5-2 à la fin du premier quart temps. Fribourg se montrant peu inspiré et trop imprécis pendant ces huit premières minutes de jeu.</p>
+						<p>Durant le second quart temps Fribourg resserre la défense et se montre très solidaire. L’attaque peine a trouver des solutions mais profite a deux reprises de situation de supériorité numérique pour marquer. L’entraineur joueur Philipp Suter inscrit un but a cinq secondes de la mi-temps et ramène Fribourg a deux points de Nyon 5-7.</p>
+						
+						<footer>
+							
+						</footer>
+					</article>
+				</li>
+			</ul>
+			
+			{% placeholder "conclusion" %}
+		</section>
+{% endblock main %}

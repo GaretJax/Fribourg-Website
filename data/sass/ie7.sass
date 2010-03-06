@@ -1,0 +1,30 @@
+@import defines
+@import ie8
+
+body 
+    overflow-y: auto
+
+body > section
+    background: url(../images/white.png) repeat-y
+    background-position-x = !sidebar_width
+    padding-bottom: 10px
+
+    > section
+        padding-bottom: 2em
+        margin-bottom: 0
+        width = !content_width - 60px
+
+body > section
+    > aside
+        width = !sidebar_width - 1px
+    
+body > footer
+    > div
+        height: 170px
+        
+
+    > div > div
+        width: 130px
+        
+    > div > div + div + div
+        width = !content_width - 2 * 191px

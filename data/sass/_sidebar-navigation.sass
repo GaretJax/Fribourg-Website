@@ -1,0 +1,53 @@
+#submenu
+    +separator
+    text-align: right
+    margin-bottom: 4em
+    
+    a
+        text-decoration: none
+        display: block
+    
+    > li > a
+        text-shadow: 0 1px 0 #fff
+        color: #29425b
+        padding: 0.9em 20px
+    
+        &:hover
+            background: rgba(255, 255, 255, 0.3)
+            color: #12283d
+    
+    > .selected > a
+        font-weight: bold
+    
+    > .ancestor > a, > .selected > a
+        background: rgba(255, 255, 255, 0.5) url(../images/sidebar-shadow.png)
+        font-weight: bold
+        color: #334B64
+        opacity: 0.8
+        
+    .selected > a:after
+        content: "›"
+        width: 1em
+        opacity: 0.6
+        font-family: "Verdana"
+        display: inline-block
+        margin-right: -1em
+        line-height: 0.1em
+        font-weight: bold
+        text-align: right
+    
+    ul
+        background: rgba(255, 255, 255, 0.6) url(../images/sidebar-shadow.png)
+        
+        .selected a
+            font-weight: bold
+            color: rgba(41, 66, 91, 0.8)
+            background: rgba(214, 223, 235, 0.5) url(../images/sidebar-shadow.png)
+        
+        a
+            color: rgba(41, 66, 91, 0.6)
+            padding: 0.6em 20px
+            
+            &:hover
+                color: rgba(41, 66, 91, 0.8)
+                background: rgba(214, 223, 235, 0.5) url(../images/sidebar-shadow.png)
