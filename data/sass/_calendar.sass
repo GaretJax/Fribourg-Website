@@ -1,0 +1,121 @@
+@import defines
+
+#calendar
+    section > section
+        nav
+            ul
+                text-align: center
+                font-size: 1.2em
+        
+                li
+                    display: inline
+                    padding: 0 2em
+                a
+                    color: #0E3A78
+                    text-decoration: none
+                    display: inline-block
+                    padding: 1px 5px
+                    border-bottom: 1px solid transparent
+                    
+                    &:hover
+                        border-bottom: 1px solid #40669c
+                        background:  #fcffd7
+            
+                li + li
+                    padding-left: 0
+                    margin-left: -0.17em
+            
+                li + li:before
+                    content: "♦"
+                    padding-right: 2.2em
+                    color: #ccc
+
+    table
+        width = !content_width + 2 * 14px - 2 * 35px
+        position: relative
+        margin-top: 30px
+    
+        td.empty
+            background: #f6f6f6
+            span
+                color: #ccc
+        
+        thead
+            width = !content_width + 2 * 14px - 2 * 35px - 6px
+            position: absolute
+            top: -18px
+            
+            tr
+                display: table-row
+        
+        th
+            border: 0
+            color: #999
+            text-align: center
+            font-size: 0.8em
+            padding: 0
+            width = (!content_width + 2 * 14px - 2 * 35px - 6px)/7 
+    
+        td
+            height: 90px
+            width: 14.285%
+            vertical-align: top
+            font-size: 0.8em
+            overflow: hidden
+            position: relative
+        
+            &:hover
+                overflow: visible
+        
+            span
+                display: block
+                color: #666
+    
+        td:not(.empty):hover
+            background: #fcffd7
+        
+            &:hover ul
+                width: auto
+        
+        ul
+            max-height: 72px
+            overflow-y: hidden
+            margin: 0 -5px
+            width: 106px
+            position: absolute
+            
+            li
+                background: #154B84
+                //border-left: 3px solid #154B84
+                //border-right: 5px solid #154B84
+                line-height: 1.4em
+                white-space: nowrap
+                padding: 0 5px
+                
+                a
+                    color: #fff
+                    display: block
+                    overflow: hidden
+                    text-decoration: none
+                    padding: 3px 0px
+                    
+                    &:hover
+                        text-decoration: underline
+                
+                &:first-child
+                    +border-top-radius(3px)
+                
+                &:last-child
+                    +border-bottom-radius(3px)
+                
+            li + li
+                border-top: 1px solid #306189
+            
+            li.more
+                text-align: center
+                padding-top: 0
+                color: rgba(255, 255, 255, 0.6)
+                padding-bottom: 6px
+                line-height: 12px
+                font-weight: bold
+                font-size: 1.3em

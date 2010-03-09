@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+
+{% block title %}{{ block.super }}{% endblock %}
+
+{% block bodyid %}calendar{% endblock %}
+
+{% block main %}
+	<section>
+		<h1>Calendrier pour May 2010</h1>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+		
+		<nav>
+			<ul>
+				<li><a href="#">&larr; Avril 2010</a></li>
+				<li><a href="#">Juin 2010 &rarr;</a></li>
+			</ul>
+		</nav>
+		
+		<table class="calendar">
+			<thead>
+			<tr>
+				<th>Lundi</th>
+				<th>Mardi</th>
+				<th>Mercredi</th>
+				<th>Jeudi</th>
+				<th>Vendredi</th>
+				<th>Samedi</th>
+				<th>Dimanche</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="empty"><span>29</span></td>
+				<td class="empty"><span>30</span></td>
+				<td class="empty"><span>31</span></td>
+				<td><span>1</span></td>
+				<td>
+					<span>2</span>
+					<ul>
+						<li class="first"><a href="#">Fribourg 1 - Winthertur 2</a></li>
+						<li class="second"><a href="#">Fribourg 2 - Bern 2</a></li>
+						<li class="first"><a href="#">Fribourg 1 -  WB Tristar</a></li>
+					</ul>
+				</td>
+				<td><span>3</span></td>
+				<td><span>4</span></td>
+			</tr>
+			<tr>
+				<td><span>5</span></td>
+				<td><span>6</span></td>
+				<td><span>7</span></td>
+				<td>
+					<span>8</span>
+					<ul>
+						<li class="first"><a href="#">Winthertur 2 - Fribourg 1</a></li>
+						<li class="first"><a href="#">Kreuzlingen 2 - Fribourg 1</a></li>
+						<li class="more">…</li>
+					</ul>
+				</td>
+				<td><span>9</span></td>
+				<td><span>10</span></td>
+				<td><span>11</span></td>
+			</tr>
+			<tr>
+				<td><span>12</span></td>
+				<td><span>13</span></td>
+				<td><span>14</span></td>
+				<td><span>15</span></td>
+				<td><span>16</span></td>
+				<td>
+					<span>17</span>
+					<ul>
+						<li class="first"><a href="#">Fribourg 1 - Winthertur 2</a></li>
+						<li class="second"><a href="#">Fribourg 2 - Winthertur 3</a></li>
+					</ul>
+				</td>
+				<td><span>18</span></td>
+			</tr>
+			<tr>
+				<td><span>19</span></td>
+				<td><span>20</span></td>
+				<td><span>21</span></td>
+				<td><span>22</span></td>
+				<td><span>23</span></td>
+				<td><span>24</span></td>
+				<td><span>25</span></td>
+			</tr>
+			<tr>
+				<td><span>26</span></td>
+				<td><span>27</span></td>
+				<td>
+					<span>28</span>
+					<ul>
+						<li class="second"><a href="#">Fribourg 1 - Winthertur 2</a></li>
+					</ul>
+				</td>
+				<td><span>29</span></td>
+				<td><span>30</span></td>
+				<td class="empty"><span>1</span></td>
+				<td class="empty"><span>2</span></td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<nav>
+			<ul>
+				<li><a href="#">&larr; Avril 2010</a></li>
+				<li><a href="#">Juin 2010 &rarr;</a></li>
+			</ul>
+		</nav>
+		
+		<h2>Vendredi 2 May 2010</h2>
+		
+		
+		<h2>Jeudi 8 May 2010</h2>
+		
+		<h2>Samedi 17 May 2010</h2>
+		
+		<h2>Mercredi 28 May 2010</h2>
+		
+	</section>
+{% endblock main %}
