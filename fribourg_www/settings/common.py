@@ -92,7 +92,6 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     #'coffin',
-    'grappelli',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

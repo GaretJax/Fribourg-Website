@@ -4,7 +4,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^grappelli/', include('grappelli.urls')),
     #url(r'^$', 'coffin.views.generic.simple.direct_to_template', {'template': 'index.html'}, name='index'),
     url(r'^admin/filebrowser/', include('filebrowser.urls')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
