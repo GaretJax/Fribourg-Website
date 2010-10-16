@@ -1,0 +1,10 @@
+-e git+http://github.com/thauber/django-schedule.git@328d1db05dbdac438477f207d65739e191bda129#egg=django_schedule-0.5b-py2.6-dev
+Django==1.2.1
+PIL==1.1.7
+South==0.7
+-e git+http://github.com/divio/django-cms.git@01bf2f03cfbf2f717f8ab1c854aa0c6c0c36899a#egg=django_cms-2.1.0.beta3-py2.6-dev
+python-dateutil==1.5
+vobject==0.8.1c
+wsgiref==0.1.2
+yolk==0.4.1
+django-tinymce==1.5.1.dev100
