@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load cms_tags %}
+{% load cms_tags menu_tags %}
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -33,7 +33,7 @@
 	{% block extrahead %}{% endblock extrahead %}
 </head>
 
-<body id="{% block bodyid %}{% page_attribute ciao %}{% endblock bodyid %}">
+<body id="{% block bodyid %}{# % page_attribute ciao % #}{% endblock bodyid %}">
 	{% block body %}
 
 	{% block header %}
@@ -72,7 +72,7 @@
 			</nav>
 			{% endblock subnavigation %}
 			
-			<h1>Notre sponsors</h1>
+			<h1>Nos sponsors</h1>
 			<ul id="sponsors">
 				<li><a href="#"><img src="{{ MEDIA_URL }}images/ubs.png" /></a></li>
 				<li><a href="#"><img src="{{ MEDIA_URL }}images/groupe-e.png" /></a></li>
@@ -120,7 +120,7 @@
 					Case postale 531<br />
 					1701 Fribourg</address>
 				
-				<p>Copyright © 2009-2010 Fribourg Natation, tous les droits réservé.</p>
+				<p>Copyright © 2009-2010 Fribourg Natation, tous les droits réservés.</p>
 			</div>
 		</div>
 	</footer>

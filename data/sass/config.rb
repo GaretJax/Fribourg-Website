@@ -8,6 +8,6 @@ css_dir = "../../htdocs/styles"
 sass_dir = "."
 images_dir = "../../htdocs/images"
 javascripts_dir = "../../htdocs/scripts"
-output_style = :compressed
+output_style = :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

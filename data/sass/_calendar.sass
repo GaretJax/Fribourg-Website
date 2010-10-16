@@ -1,121 +1,173 @@
 @import defines
 
 #calendar
-    section > section
-        nav
-            ul
-                text-align: center
-                font-size: 1.2em
-        
-                li
-                    display: inline
-                    padding: 0 2em
-                a
-                    color: #0E3A78
-                    text-decoration: none
-                    display: inline-block
-                    padding: 1px 5px
-                    border-bottom: 1px solid transparent
-                    
-                    &:hover
-                        border-bottom: 1px solid #40669c
-                        background:  #fcffd7
-            
-                li + li
-                    padding-left: 0
-                    margin-left: -0.17em
-            
-                li + li:before
-                    content: "♦"
-                    padding-right: 2.2em
-                    color: #ccc
+	table td ul li
+		&.calendar-1
+			background: red
+	
+	section > section
+		nav
+			ul
+				+pie-clearfix
+				font-size: 1.2em
+				width: 100%
+		
+				li
+					+box-sizing("border-box")
+					display: block
+					float: left
+					width: 50%
+					text-align: right
+					
+				a
+					color: #0E3A78
+					text-decoration: none
+					display: inline-block
+					padding: 1px 5px
+					border-bottom: 1px solid transparent
+					margin-right: 8%
+					
+					&:hover
+						border-bottom: 1px solid #40669c
+						background:	 #fcffd7
+			
+				li + li
+					text-align: left
+					padding-right: 0
+					
+					a
+						margin-right: 0
+						margin-left: 4%
+			
+				li + li:before
+					content: "♦"
+					color: #ccc
+					width: 8%
+					margin-left: -4%
+					text-align: center
+					display: inline-block
 
-    table
-        width = !content_width + 2 * 14px - 2 * 35px
-        position: relative
-        margin-top: 30px
-    
-        td.empty
-            background: #f6f6f6
-            span
-                color: #ccc
-        
-        thead
-            width = !content_width + 2 * 14px - 2 * 35px - 6px
-            position: absolute
-            top: -18px
-            
-            tr
-                display: table-row
-        
-        th
-            border: 0
-            color: #999
-            text-align: center
-            font-size: 0.8em
-            padding: 0
-            width = (!content_width + 2 * 14px - 2 * 35px - 6px)/7 
-    
-        td
-            height: 90px
-            width: 14.285%
-            vertical-align: top
-            font-size: 0.8em
-            overflow: hidden
-            position: relative
-        
-            &:hover
-                overflow: visible
-        
-            span
-                display: block
-                color: #666
-    
-        td:not(.empty):hover
-            background: #fcffd7
-        
-            &:hover ul
-                width: auto
-        
-        ul
-            max-height: 72px
-            overflow-y: hidden
-            margin: 0 -5px
-            width: 106px
-            position: absolute
-            
-            li
-                background: #154B84
-                //border-left: 3px solid #154B84
-                //border-right: 5px solid #154B84
-                line-height: 1.4em
-                white-space: nowrap
-                padding: 0 5px
-                
-                a
-                    color: #fff
-                    display: block
-                    overflow: hidden
-                    text-decoration: none
-                    padding: 3px 0px
-                    
-                    &:hover
-                        text-decoration: underline
-                
-                &:first-child
-                    +border-top-radius(3px)
-                
-                &:last-child
-                    +border-bottom-radius(3px)
-                
-            li + li
-                border-top: 1px solid #306189
-            
-            li.more
-                text-align: center
-                padding-top: 0
-                color: rgba(255, 255, 255, 0.6)
-                padding-bottom: 6px
-                line-height: 12px
-                font-weight: bold
-                font-size: 1.3em
+	table
+		width = !content_width + 2 * 14px - 2 * 35px
+		position: relative
+		+border-radius(7px)
+		margin-top: 30px
+		
+		tr:first-child td:first-child
+			+border-top-left-radius(4px)
+			
+		tr:first-child td:last-child
+			+border-top-right-radius(4px)
+			
+		tr:last-child td:first-child
+			+border-bottom-left-radius(4px)
+		
+		tr:last-child td:last-child
+			+border-bottom-right-radius(4px)
+	
+		td.empty
+			background: #f6f6f6
+			span
+				color: #ccc
+		
+		thead
+			width = !content_width + 2 * 14px - 2 * 35px - 6px
+			position: absolute
+			top: -18px
+			
+			tr
+				display: table-row
+		
+		th
+			border: 0
+			color: #999
+			text-align: center
+			font-size: 0.8em
+			padding: 0
+			width = (!content_width + 2 * 14px - 2 * 35px - 6px)
+	
+		td
+			height: 90px
+			width: 14.285%
+			vertical-align: top
+			font-size: 0.8em
+			overflow: hidden
+			position: relative
+		
+			&:hover
+				overflow: visible
+		
+			> span
+				display: block
+				color: #666
+	
+		td:not(.empty):hover
+			background: #fcffd7
+		
+			&:hover ul
+				width: auto
+				max-height: 1000px
+				min-width: 104px
+				z-index: 1000
+				
+				span
+					display: inline
+				
+				li:nth-child(3)
+					display: none
+				
+				li:last-child
+					display: block
+				
+				li:nth-child(n+4)
+					display: block
+		
+		ul
+			max-height: 70px
+			overflow-y: hidden
+			margin: 0 -5px
+			width: 104px
+			position: absolute
+			border: 1px solid #fff
+			+border-radius(4px)
+			
+			li
+				background: #154B84
+				line-height: 1.4em
+				white-space: nowrap
+				padding: 0 5px
+				
+				//span
+					display: none
+				
+				a
+					color: #fff
+					display: block
+					overflow: hidden
+					text-decoration: none
+					padding: 3px 0px
+					
+					&:hover
+						text-decoration: underline
+				
+				&:first-child
+					+border-top-radius(3px)
+				
+				&:last-child,
+				&:nth-child(3)
+					+border-bottom-radius(3px)
+				
+				& + li
+					border-top: 1px solid #306189
+				
+				&:nth-child(n+4)
+					display: none
+				
+				&.more
+					text-align: center
+					padding-top: 0
+					color: rgba(255, 255, 255, 0.6)
+					padding-bottom: 6px
+					line-height: 12px
+					font-weight: bold
+					font-size: 1.3em
